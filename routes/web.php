@@ -83,3 +83,34 @@ Route::get('/find', function () {
         : "Please enter a search query";
 });
 
+
+/* ------------------------------------------------------------------------
+ * 15 | Створіть маршрут “/page”, який повертає HTML-відповідь із заголовком
+ * “This is a page” і статусом 200.
+ */
+Route::get('/page', function () {
+    return response("<h1>This is a page</h1>");
+});
+
+
+/* ------------------------------------------------------------------------
+ * 16 | Створіть маршрут “/missing”, який повертає HTML-відповідь
+ * із заголовком “This page is not found” і статусом 404.
+ */
+Route::get('/missing', function () {
+    return response("<h1>This page is not found</h1>", 404);
+});
+
+
+/* ------------------------------------------------------------------------
+ * 17 | Створіть маршрут “/public”, який повертає HTML-відповідь із заголовком “Public Page”.
+ * Додайте до цього маршруту заголовок “Cache-Control” зі значенням
+ * “no-cache, no-store, must-revalidate”.
+ */
+Route::get('/public', function () {
+    return response("<h1>Public Page</h1>", 200)
+        ->header("Cache-Control", "no-cache, no-store, must-revalidate")
+        ;
+});
+
+
