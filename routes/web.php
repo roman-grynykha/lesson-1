@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/* ------------------------------------------------------------------------
+ * 8 | Відредагуйте файл routes/web.php, щоб налаштувати маршрути для CRUD.
+ */
+Route::resource('posts', PostController::class);
 
 
 /* ------------------------------------------------------------------------
